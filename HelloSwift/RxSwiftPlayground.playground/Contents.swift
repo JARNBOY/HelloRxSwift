@@ -1,22 +1,19 @@
 import UIKit
 import RxSwift
+import RxCocoa
 
 let disposeBag = DisposeBag()
 
-let subject =  ReplaySubject<String>.create(bufferSize: 2)
+let relay =  BehaviorRelay(value: ["item 0"])//BehaviorRelay(value: [String]())
 
-subject.onNext("Issue 1")
-subject.onNext("Issue 2")
-subject.onNext("Issue 3")
-subject.subscribe{ event in
-    print(event)
-}
+var value = relay.value
+value.append("item 1")
+value.append("item 2")
+value.append("item 3")
 
-subject.onNext("Issue 4")
-subject.onNext("Issue 5")
-subject.onNext("Issue 6")
+relay.accept(value)
 
-print("Subcribtion 2")
-subject.subscribe{ event in
+relay.asObservable()
+    .subscribe{ event in
     print(event)
 }

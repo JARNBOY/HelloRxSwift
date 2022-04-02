@@ -8,15 +8,19 @@ target 'HelloSwift' do
   # Pods for HelloSwift
 
   pod 'RxSwift', '~> 4.0'
+  pod 'RxCocoa', '~> 4.0'
+
   target 'HelloSwiftTests' do
     inherit! :search_paths
     # Pods for testing
     pod 'RxSwift', '~> 4.0'
+    pod 'RxCocoa', '~> 4.0'
   end
 
   target 'HelloSwiftUITests' do
     # Pods for testing
     pod 'RxSwift', '~> 4.0'
+    pod 'RxCocoa', '~> 4.0'
   end
 
 end
