@@ -49,6 +49,7 @@
 		CEDD0E721D0C60D4D6BA4ED0 /* Pods-HelloSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloSwiftTests.debug.xcconfig"; path = "Target Support Files/Pods-HelloSwiftTests/Pods-HelloSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4D0C1DD4EC563D6C2EBA357 /* Pods_HelloSwift_HelloSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloSwift_HelloSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF348794735B7D9326FC3443 /* Pods-HelloSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloSwiftTests.release.xcconfig"; path = "Target Support Files/Pods-HelloSwiftTests/Pods-HelloSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		FB41E2D127F80CEC00C9FA8F /* RxSwiftPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwiftPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FBB5EC9B27F806EE00DAD062 /* HelloSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB5EC9E27F806EE00DAD062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBB5ECA027F806EE00DAD062 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 				CEDD0E721D0C60D4D6BA4ED0 /* Pods-HelloSwiftTests.debug.xcconfig */,
 				EF348794735B7D9326FC3443 /* Pods-HelloSwiftTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -142,6 +142,7 @@
 		FBB5EC9D27F806EE00DAD062 /* HelloSwift */ = {
 			isa = PBXGroup;
 			children = (
+				FB41E2D127F80CEC00C9FA8F /* RxSwiftPlayground.playground */,
 				FBB5EC9E27F806EE00DAD062 /* AppDelegate.swift */,
 				FBB5ECA027F806EE00DAD062 /* SceneDelegate.swift */,
 				FBB5ECA227F806EE00DAD062 /* ViewController.swift */,
