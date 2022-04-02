@@ -20,7 +20,8 @@ observable3.subscribe { event in
     }
 }
 
-observable4.subscribe (onNext: { element in
+let subscribtion4 = observable4.subscribe (onNext: { element in
     print(element)
 })
+subscribtion4.dispose()
 
