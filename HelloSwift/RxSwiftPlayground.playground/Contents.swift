@@ -5,9 +5,10 @@ import RxCocoa
 //let subject = PublishSubject<String>()
 let disposeBag = DisposeBag()
 
-Observable.of(1,2,3,4,5,6)
-    .take(3)
-    .subscribe(onNext: {
+Observable.of(2,4,5,6)
+    .takeWhile{
+        return $0 % 2 == 0
+    }.subscribe(onNext: {
         print($0)
     }).disposed(by: disposeBag)
 
