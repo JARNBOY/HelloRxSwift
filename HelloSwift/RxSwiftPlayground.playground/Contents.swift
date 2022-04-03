@@ -2,18 +2,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+let strikes = PublishSubject<String>()
 let disposeBag = DisposeBag()
 
-let strikes = PublishSubject<String>()
+strikes.elementAt(2)
+    .subscribe(onNext:{ _ in
+        print("You are out!")
+    }).disposed(by: disposeBag)
 
-strikes
-    .ignoreElements()
-    .subscribe { _ in
-        print("[Subscribtion is called]")
-    }.disposed(by: disposeBag)
-
-strikes.onNext("A")
-strikes.onNext("B")
-strikes.onNext("C")
-
-strikes.onCompleted()
+strikes.onNext("X")
+strikes.onNext("X")
+strikes.onNext("0")
