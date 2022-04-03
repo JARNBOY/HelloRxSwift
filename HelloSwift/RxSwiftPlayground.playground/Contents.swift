@@ -4,16 +4,16 @@ import RxCocoa
 
 let disposeBag = DisposeBag()
 
-let relay =  BehaviorRelay(value: ["item 0"])//BehaviorRelay(value: [String]())
+let strikes = PublishSubject<String>()
 
-var value = relay.value
-value.append("item 1")
-value.append("item 2")
-value.append("item 3")
+strikes
+    .ignoreElements()
+    .subscribe { _ in
+        print("[Subscribtion is called]")
+    }.disposed(by: disposeBag)
 
-relay.accept(value)
+strikes.onNext("A")
+strikes.onNext("B")
+strikes.onNext("C")
 
-relay.asObservable()
-    .subscribe{ event in
-    print(event)
-}
+strikes.onCompleted()
