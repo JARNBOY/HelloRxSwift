@@ -14,7 +14,7 @@ let mary = Student(score: BehaviorRelay(value: 90))
 let student = PublishSubject<Student>()
 
 student.asObserver()
-    .flatMap {
+    .flatMapLatest {
         $0.score.asObservable()
     }.subscribe(onNext:{
         print($0)
@@ -22,7 +22,7 @@ student.asObserver()
 
 student.onNext(john)
 john.score.accept(100)
-
+john.score.accept(50)
 student.onNext(mary)
-
+john.score.accept(40)
 
