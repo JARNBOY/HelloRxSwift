@@ -4,20 +4,15 @@ import RxCocoa
 
 let disposeBag = DisposeBag()
 
+let source = Observable.of(1,2,3)
 
-let button = PublishSubject<Void>()
-let textfield = PublishSubject<String>()
+source.reduce(0, accumulator: +)
+    .subscribe(onNext:{
+        print($0)
+    }).disposed(by: disposeBag)
 
-let observable = button.withLatestFrom(textfield)
-let disposable = observable.subscribe(onNext:{ value in
-        print(value)
-})
-
-textfield.onNext("Sw")
-textfield.onNext("Swif")
-
-
-textfield.onNext("Swift")
-textfield.onNext("Swift Rock!")
-button.onNext(())
-button.onNext(())
+source.reduce(0) { summary, newValue in
+    return summary + newValue
+}.subscribe(onNext:{
+    print($0)
+}).disposed(by: disposeBag)
