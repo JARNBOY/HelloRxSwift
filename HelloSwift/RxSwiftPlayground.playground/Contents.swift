@@ -5,18 +5,19 @@ import RxCocoa
 let disposeBag = DisposeBag()
 
 
-let left = PublishSubject<Int>()
-let right = PublishSubject<Int>()
+let button = PublishSubject<Void>()
+let textfield = PublishSubject<String>()
 
-let observable = Observable.combineLatest(left,right) { lastLeft,lastRight in
-    "\(lastLeft) \(lastRight)"
-}
+let observable = button.withLatestFrom(textfield)
 let disposable = observable.subscribe(onNext:{ value in
         print(value)
 })
 
-left.onNext(45)
-right.onNext(1)
-left.onNext(30)
-right.onNext(1)
-right.onNext(2)
+textfield.onNext("Sw")
+textfield.onNext("Swif")
+
+
+textfield.onNext("Swift")
+textfield.onNext("Swift Rock!")
+button.onNext(())
+button.onNext(())
