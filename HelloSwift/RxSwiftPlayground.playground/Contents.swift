@@ -4,15 +4,10 @@ import RxCocoa
 
 let disposeBag = DisposeBag()
 
-let source = Observable.of(1,2,3)
+let source = Observable.of(1,2,3,5,6)
 
-source.reduce(0, accumulator: +)
+source.scan(0, accumulator: +)
     .subscribe(onNext:{
         print($0)
     }).disposed(by: disposeBag)
 
-source.reduce(0) { summary, newValue in
-    return summary + newValue
-}.subscribe(onNext:{
-    print($0)
-}).disposed(by: disposeBag)
